@@ -1034,17 +1034,22 @@ section,
 .contact .info-wrap {
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-}
-
-@media (max-width: 575px) {
-  .contact .info-wrap {
-    padding: 20px;
-  }
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Alinha os itens ao topo */
 }
 
 .contact .info-item {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start; /* Alinha os ícones com o topo do texto */
+  width: 33%; /* Define largura fixa para cada item */
+  min-width: 200px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .contact .info-item i {
@@ -1059,6 +1064,7 @@ section,
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
   margin-right: 15px;
+  flex-shrink: 0; /* Previne que o ícone encolha */
 }
 
 .contact .info-item h3 {
@@ -1066,29 +1072,26 @@ section,
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 5px;
+  line-height: 1.2;
 }
 
 .contact .info-item p {
   padding: 0;
   margin-bottom: 0;
   font-size: 14px;
+  line-height: 1.4;
 }
 
-.contact .info-item:hover i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.contact .php-email-form {
-  background-color: var(--surface-color);
-  height: 100%;
-  padding: 30px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 575px) {
-  .contact .php-email-form {
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .contact .info-wrap {
+    flex-direction: column;
     padding: 20px;
+  }
+  
+  .contact .info-item {
+    width: 100%;
+    min-width: auto;
   }
 }
 
